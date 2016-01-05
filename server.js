@@ -1,10 +1,9 @@
-//break up file after i get it working
-
 var express = require('express');
 var mongoose = require("mongoose");
 var routes = require('./routes/index.js');
-require('dotenv').load();
+
 var app = express();
+require('dotenv').load();
 
 var uristring = process.env.MONGOLAB_URI;
 mongoose.connect(uristring, function (err, res) {
@@ -15,15 +14,10 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
-
-
-//routes
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 routes(app);
-
-
 
 var port = process.env.PORT;
 app.listen(port, function() {
