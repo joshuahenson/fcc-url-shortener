@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+	head
+		title URL Shortener Microservice
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
+	body
+		.container
+			h1.header
+				| API Basejump: URL Shortener Microservice
+			blockquote
+				| User stories:
+				ol
+					li 
+						| I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+					li
+						| If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+					li
+						| When I visit that shortened URL, it will redirect me to my original link.
+			h3 Example creation usage:
+			code https://short1.herokuapp.com/new/http://freecodecamp.com
+			h3 Example creation output:
+			code { "original_url": "http://freecodecamp.com", "short_url": "https://short1.herokuapp.com/c" }
+			h3 Usage:
+			code https://short1.herokuapp.com/c
+			h3 Will redirect to:
+			code http://freecodecamp.com
